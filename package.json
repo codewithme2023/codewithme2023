@@ -1,0 +1,21 @@
+{
+  "name": "codewithme2023",
+  "version": "1.0.0",
+  "description": "<!--\r **codewithme2023/codewithme2023** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codewithme2023/codewithme2023.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codewithme2023/codewithme2023/issues"
+  },
+  "homepage": "https://github.com/codewithme2023/codewithme2023#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.34.3"
+  }
+}
