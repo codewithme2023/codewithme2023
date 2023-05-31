@@ -4,14 +4,10 @@ test('Example Test', async ({ page }) => {
   // Navigate to a website
   await page.goto('https://example.com');
 
-  // Perform actions on the page
-  await page.fill('input[name="q"]', 'Playwright');
-  await page.click('input[type="submit"]');
+  // Get the page title
+  const title = await page.title();
+  console.log('Page title:', title);
 
-  // Wait for the search results to load
-  await page.waitForSelector('#search');
-
-  // Perform assertions
-  const searchResults = await page.$eval('#search', (element) => element.textContent);
-  expect(searchResults).toContain('Playwright');
+  // Assert that the title contains a specific string
+  await expect(title).toContain('Example Domain');
 });
