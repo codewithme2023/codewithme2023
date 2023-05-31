@@ -1,19 +1,29 @@
-// @ts-check
-const { test, expect } = require('@playwright/test');
+const { chromium } = require('playwright');
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+(async () => {
+  // Launch the browser
+  const browser = await chromium.launch();
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  // Create a new browser context
+  const context = await browser.newContext();
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  // Create a new page
+  const page = await context.newPage();
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  // Navigate to a website
+  await page.goto('https://example.com');
 
-  // Expects the URL to contain intro.
-  await expect(page).toHaveURL(/.*intro/);
-});
+  // Perform actions on the page
+  await page.fill('input[name="q"]', 'Playwright');
+  await page.click('input[type="submit"]');
+
+  // Wait for the search results to load
+  await page.waitForSelector('#search');
+
+  // Perform assertions
+  const searchResults = await page.$eval('#search', (element) => element.textContent);
+  console.log('Search Results:', searchResults);
+
+  // Close the browser
+  await browser.close();
+})();
