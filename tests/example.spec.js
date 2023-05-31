@@ -1,15 +1,6 @@
-const { chromium } = require('playwright');
+const { test, expect } = require('@playwright/test');
 
-(async () => {
-  // Launch the browser
-  const browser = await chromium.launch();
-
-  // Create a new browser context
-  const context = await browser.newContext();
-
-  // Create a new page
-  const page = await context.newPage();
-
+test('Example Test', async ({ page }) => {
   // Navigate to a website
   await page.goto('https://example.com');
 
@@ -22,8 +13,5 @@ const { chromium } = require('playwright');
 
   // Perform assertions
   const searchResults = await page.$eval('#search', (element) => element.textContent);
-  console.log('Search Results:', searchResults);
-
-  // Close the browser
-  await browser.close();
-})();
+  expect(searchResults).toContain('Playwright');
+});
