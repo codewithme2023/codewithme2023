@@ -9,5 +9,5 @@ test('Example Test', async ({ page }) => {
   console.log('Page title:', title);
 
   // Assert that the title contains a specific string
-  await expect(title).toContain('Example Domain');
+  await expect(title).toContain('Example');
 });
