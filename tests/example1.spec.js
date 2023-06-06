@@ -6,7 +6,7 @@ test('Example Test', async ({ page }) => {
 
   // Get the page title
   const title = await page.title();
-  console.log('Page title:', title);
+  console.log('Page title 1:', title);
 
   // Assert that the title contains a specific string
   await expect(title).toContain('Example');
