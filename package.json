@@ -16,6 +16,6 @@
   },
   "homepage": "https://github.com/codewithme2023/codewithme2023#readme",
   "devDependencies": {
-    "@playwright/test": "9.6.7"
+    "@playwright/test": "^1.35.1"
   }
 }
