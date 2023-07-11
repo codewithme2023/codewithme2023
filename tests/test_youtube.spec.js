@@ -14,6 +14,7 @@ test('Example Test', async ({ page }) => {
   await youtubeMainPage.checkTitle(title, "youtube");
   await youtubeMainPage.clickFirstVideo();
   await youtubeVideoPage.pauseYT();
+  await youtubeVideoPage.writeComment("Ich habe kommentiert");
   await youtubeVideoPage.sleep(15000);
 
 });

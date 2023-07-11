@@ -22,6 +22,7 @@ class YoutubeMainPage {
     async clickFirstVideo() {
       const firstVideoXPath = '//*[@id="dismissible"]/ytd-thumbnail';
       await this.page.waitForSelector(`xpath=${firstVideoXPath}`);
+      await this.page.waitForTimeout(2000);
       const firstVideo = await this.page.$(`xpath=${firstVideoXPath}`);
       await firstVideo.click();
     }
