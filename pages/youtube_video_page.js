@@ -23,7 +23,8 @@ class YoutubeVideoPage{
       }
 
       async scrollDownBy(pixel) {
-        console.log(pixel);
+        await this.page.waitForTimeout(5000);
+
         await this.page.evaluate((scrollPixel) => {
           window.scrollBy(0, scrollPixel);
         }, pixel);
@@ -37,6 +38,12 @@ class YoutubeVideoPage{
         const newButtonXpath = '(//*[@id="menu"]/a)[2]';
         const newButton = await this.page.waitForSelector(`xpath=${newButtonXpath}`);
         await newButton.click();
+    }
+
+    async clickLike(){
+        const sortButtonXpath = '(//*[@id="segmented-like-button"]/ytd-toggle-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div)[1]'; 
+        const sortButton = await this.page.waitForSelector(`xpath=${sortButtonXpath}`);
+        await sortButton.click();
     }
 
     async sleep(ms) {
