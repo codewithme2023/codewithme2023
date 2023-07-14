@@ -19,6 +19,24 @@ class YoutubeMainPage {
       }
     }
 
+    async searchForVideo(value){
+      await this.page.waitForTimeout(2000);
+
+      const searchInputXPath = "(//*[@id='search'])[3]";
+      await this.page.waitForSelector(`xpath=${searchInputXPath}`);
+      const searchInput = await this.page.$(`xpath=${searchInputXPath}`);
+      
+      const searchButtonXpath = "//*[@id='search-icon-legacy']";
+      await this.page.waitForSelector(`xpath=${searchButtonXpath}`);
+      const searchButton = await this.page.$(`xpath=${searchButtonXpath}`);
+
+      await this.page.waitForTimeout(2000);
+
+      await searchInput.click();
+      await searchInput.type(value);
+      await searchButton.click();
+  }
+
     async clickFirstVideo() {
 
       await this.page.waitForTimeout(2000);

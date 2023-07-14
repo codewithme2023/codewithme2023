@@ -16,7 +16,16 @@ class YoutubeSearchPage{
           }
     }
 
-    async
+    async clickFirstVideo() {
+
+        await this.page.waitForTimeout(2000);
+  
+        const firstVideoXPath = '//*[@id="contents"]/ytd-video-renderer[1]';
+        await this.page.waitForSelector(`xpath=${firstVideoXPath}`);
+        const firstVideo = await this.page.$(`xpath=${firstVideoXPath}`);
+        await firstVideo.click();
+
+      }
 
     async sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));

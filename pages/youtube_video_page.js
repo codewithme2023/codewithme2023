@@ -22,27 +22,21 @@ class YoutubeVideoPage{
         await pauseButton.click();
       }
 
-    async scrollDownBy(value) {
-        await this.page.evaluate(() => {
-            window.scrollBy(0, value);
-        });
-    } 
+      async scrollDownBy(pixel) {
+        console.log(pixel);
+        await this.page.evaluate((scrollPixel) => {
+          window.scrollBy(0, scrollPixel);
+        }, pixel);
+      }
     
-    async clickComment() {
-        const commentAreaXpath = '//*[@id="simplebox-placeholder"]'; 
-        const commentArea = await this.page.waitForSelector(`xpath=${commentAreaXpath}`);
-        await commentArea.click();
-    }
+    async sortCommentsAfterNew() {
+        const sortButtonXpath = '(//*[@id="label"])[3]'; 
+        const sortButton = await this.page.waitForSelector(`xpath=${sortButtonXpath}`);
+        await sortButton.click();
 
-    async writeComment(commentText) {
-        const commentAreaXpath = '//*[@id="simplebox-placeholder"]'; 
-        const commentArea = await this.page.waitForSelector(`xpath=${commentAreaXpath}`);
-        await commentArea.click();
-        const commentInputXPath = "//*[@id='header']//input";
-        await this.page.waitForSelector(`xpath=${commentInputXPath}`);
-        const commentInput = await this.page.$(`xpath=${commentInputXPath}`);
-        await commentInput.click();
-        await commentInput.type(commentText);
+        const newButtonXpath = '(//*[@id="menu"]/a)[2]';
+        const newButton = await this.page.waitForSelector(`xpath=${newButtonXpath}`);
+        await newButton.click();
     }
 
     async sleep(ms) {
