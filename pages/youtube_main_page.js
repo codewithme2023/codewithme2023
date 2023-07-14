@@ -20,11 +20,30 @@ class YoutubeMainPage {
     }
 
     async clickFirstVideo() {
+
+      await this.page.waitForTimeout(2000);
+
       const firstVideoXPath = '//*[@id="dismissible"]/ytd-thumbnail';
       await this.page.waitForSelector(`xpath=${firstVideoXPath}`);
-      await this.page.waitForTimeout(2000);
       const firstVideo = await this.page.$(`xpath=${firstVideoXPath}`);
-      await firstVideo.click();
+
+      const secondVideoXPath = '(//*[@id="dismissible"]/ytd-thumbnail)[2]';
+      await this.page.waitForSelector(`xpath=${secondVideoXPath}`);
+      const secondVideo = await this.page.$(`xpath=${secondVideoXPath}`);
+
+      const firstVideoTextXPath = '//*[@id="video-title"]';
+      await this.page.waitForSelector(`xpath=${firstVideoTextXPath}`);
+      const firstVideoText = await this.page.$(`xpath=${firstVideoTextXPath}`);
+
+      await this.page.waitForTimeout(2000);
+
+      const videoText = await firstVideoText.evaluate(element => element.textContent);
+      console.log(videoText)
+      if (videoText.includes("lofi")) {
+        await secondVideo.click();
+      } else {
+        await firstVideo.click();
+      }
     }
 
     async acceptAllCookies() {

@@ -21,7 +21,19 @@ class YoutubeVideoPage{
         const pauseButton = await this.page.waitForSelector(`xpath=${pauseButtonXPath}`);
         await pauseButton.click();
       }
+
+    async scrollDownBy(value) {
+        await this.page.evaluate(() => {
+            window.scrollBy(0, value);
+        });
+    } 
     
+    async clickComment() {
+        const commentAreaXpath = '//*[@id="simplebox-placeholder"]'; 
+        const commentArea = await this.page.waitForSelector(`xpath=${commentAreaXpath}`);
+        await commentArea.click();
+    }
+
     async writeComment(commentText) {
         const commentAreaXpath = '//*[@id="simplebox-placeholder"]'; 
         const commentArea = await this.page.waitForSelector(`xpath=${commentAreaXpath}`);
