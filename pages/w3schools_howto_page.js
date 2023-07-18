@@ -1,4 +1,6 @@
-class W3schoolsJavascriptPage {
+const { expect } = require("@playwright/test");
+
+class W3schoolsHowtoPage {
     constructor(page) {
       this.page = page;
     }
@@ -18,6 +20,36 @@ class W3schoolsJavascriptPage {
         console.log('Title does not contain "' + value + '"');
       }
     }
+
+    async openSliderPage(value){
+      const numberXPath = `(//a[text()='${value}'])[1]`;
+      await this.page.waitForSelector(`xpath=${numberXPath}`);
+      const number = await this.page.$(`xpath=${numberXPath}`);
+      await number.click();
+    }
+
+    async closeSlider(){
+      const slider1XPath = `(//div[@class='slider'])[1]`;
+      const slider2XPath = `(//div[@class='slider'])[2]`;
+      await this.page.waitForSelector(`xpath=${slider1XPath}`);
+      await this.page.waitForSelector(`xpath=${slider2XPath}`);
+      const slider1 = await this.page.$(`xpath=${slider1XPath}`);
+      const slider2 = await this.page.$(`xpath=${slider2XPath}`);
+      await slider1.click();
+      await slider2.click();
+    }
+
+    async closeSliderRound(){
+      const slider1XPath = `(//div[@class='slider round'])[1]`;
+      const slider2XPath = `(//div[@class='slider round'])[2]`;
+      await this.page.waitForSelector(`xpath=${slider1XPath}`);
+      await this.page.waitForSelector(`xpath=${slider2XPath}`);
+      const slider1 = await this.page.$(`xpath=${slider1XPath}`);
+      const slider2 = await this.page.$(`xpath=${slider2XPath}`);
+      await slider1.click();
+      await slider2.click();
+    }
+
 
     async scrollDownBy(pixel) {
       await this.page.waitForTimeout(2000);
@@ -61,5 +93,5 @@ class W3schoolsJavascriptPage {
     }
   }
   
-  module.exports = W3schoolsJavascriptPage;
+  module.exports = W3schoolsHowtoPage;
   
