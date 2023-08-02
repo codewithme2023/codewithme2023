@@ -7,7 +7,7 @@ const fs = require('fs');
 Chart.register(LinearScale, BarController, CategoryScale, BarElement);
 
 (async () => {
-  const reportFilePath = 'C:/repos/codewithme2023/playwright-report/index.html'; // Update with the correct path
+  const reportFilePath = '../playwright-report/index.html'; // Update with the correct path
   const analyzer = new TestResultAnalyzer(reportFilePath);
   const testResults = await analyzer.getTestResults();
 
