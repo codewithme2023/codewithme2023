@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test');
 
 const W3schoolsMainPage = require('../pages/w3schools_main_page.js')
-const W3schoolsJavascriptPage = require('..pages/w3schools_javascript_page.js')
+const W3schoolsJavascriptPage = require('../pages/w3schools_javascript_page.js')
 const W3schoolsPythonPage = require('../pages/w3schools_python_page.js')
 const W3schoolsHowtoPage = require('../pages/w3schools_howto_page.js')
 
