@@ -1,4 +1,5 @@
 
+
 class YoutubeVideoPage{
     constructor(page){
         this.page = page;
@@ -8,12 +9,9 @@ class YoutubeVideoPage{
         return await page.title();
     }
 
-    async checkTitle(title, value){
-        if (title.includes(value)) {
-            console.log('Title contains "' + value + '"');
-          } else {
-            console.log('Title does not contain "' + value + '"');
-          }
+    async checkTitle(title, value) {
+      const titleContainsValue = title.includes(value);
+      expect(titleContainsValue);
     }
 
     async pauseYT() {

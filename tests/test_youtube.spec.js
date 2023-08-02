@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+const { test } = require('@playwright/test');
+
 const YoutubeMainPage = require('c:/repos/codewithme2023/pages/youtube_main_page.js');
 const YoutubeVideoPage = require('../pages/youtube_video_page.js');
 const YoutubeSearchPage = require('../pages/youtube_search_page.js');

@@ -1,3 +1,5 @@
+
+
 class YoutubeMainPage {
     constructor(page) {
       this.page = page;
@@ -12,11 +14,8 @@ class YoutubeMainPage {
     }
   
     async checkTitle(title, value) {
-      if (title.includes(value)) {
-        console.log('Title contains "' + value + '"');
-      } else {
-        console.log('Title does not contain "' + value + '"');
-      }
+      const titleContainsValue = title.includes(value);
+      expect(titleContainsValue);
     }
 
     async searchForVideo(value){

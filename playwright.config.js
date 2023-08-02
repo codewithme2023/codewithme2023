@@ -1,5 +1,8 @@
 // @ts-check
+global.expect = require('@playwright/test').expect;
+
 const { defineConfig, devices } = require('@playwright/test');
+
 
 /**
  * Read environment variables from file.

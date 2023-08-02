@@ -1,4 +1,4 @@
-const { expect } = require("@playwright/test");
+
 
 class W3schoolsHowtoPage {
     constructor(page) {
@@ -14,11 +14,8 @@ class W3schoolsHowtoPage {
     }
   
     async checkTitle(title, value) {
-      if (title.includes(value)) {
-        console.log('Title contains "' + value + '"');
-      } else {
-        console.log('Title does not contain "' + value + '"');
-      }
+      const titleContainsValue = title.includes(value);
+      expect(titleContainsValue);
     }
 
     async openSliderPage(value){

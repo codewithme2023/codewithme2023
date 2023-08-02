@@ -1,12 +1,12 @@
 
 
-class W3schoolsJavascriptPage {
+class HerokuappInputsPage {
     constructor(page) {
       this.page = page;
     }
   
     async navigate() {
-      await this.page.goto('https://www.w3schools.com/');
+      await this.page.goto('http://the-internet.herokuapp.com/');
     }
   
     async getPageTitle() {
@@ -18,24 +18,22 @@ class W3schoolsJavascriptPage {
       expect(titleContainsValue);
     }
 
-    async scrollDownBy(pixel) {
-      await this.page.waitForTimeout(2000);
-
-      await this.page.evaluate((scrollPixel) => {
-        window.scrollBy(0, scrollPixel);
-      }, pixel);
+    async clickLink(value){
+      const linkXpath = `//a[normalize-space()="${value}"]`;
+      const link = await this.page.waitForSelector(`xpath=${linkXpath}`);
+      await link.click();
     }
 
-    async clickTutorial(language) {
-      const tutorialXpath = `//a[normalize-space()="${language}"]`;
-      const tutorial = await this.page.waitForSelector(`xpath=${tutorialXpath}`);
-      await tutorial.click();
+    async insertNumber(value){
+      const inputXpath = `//*[@id="content"]/div/div/div/input`;
+      const input = await this.page.waitForSelector(`xpath=${inputXpath}`);
+      await input.fill(value);
+
+      const inputValue = await this.page.evaluate((element) => element.value, input);
+      expect(inputValue).toBe(value);
+
     }
-    
-    async checkHeaderExistence(header) {
-      await this.page.locator(`//h2[normalize-space()="${header}"]`).isVisible();
-    }
-  
+
     async sleep(ms) {
       return new Promise((resolve) => setTimeout(resolve, ms));
     }
@@ -54,5 +52,5 @@ class W3schoolsJavascriptPage {
     }
   }
   
-  module.exports = W3schoolsJavascriptPage;
+  module.exports = HerokuappInputsPage;
   
