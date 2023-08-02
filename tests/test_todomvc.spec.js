@@ -2,7 +2,7 @@ const { test } = require('@playwright/test');
 
 const TodomvcMainPage = require('../pages/todomvc_main_page.js')
 
-test('Example Test', async ({ page } ) => {
+test('Todomvc Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const todomvcMainPage = new TodomvcMainPage(page);

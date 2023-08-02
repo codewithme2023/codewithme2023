@@ -2,7 +2,7 @@ const { test } = require('@playwright/test');
 
 const ReactMainPage = require('../pages/react_main_page.js');
 
-test('Example Test', async ({ page } ) => {
+test('React Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const reactMainPage = new ReactMainPage(page);

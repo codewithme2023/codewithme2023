@@ -2,7 +2,7 @@ const { test } = require('@playwright/test');
 
 const AngularjsMainPage = require('../pages/angularjs_main_page.js')
 
-test('Example Test', async ({ page } ) => {
+test('Angularjs', async ({ page } ) => {
   test.setTimeout(120000);
 
   const angularjsMainPage = new AngularjsMainPage(page);

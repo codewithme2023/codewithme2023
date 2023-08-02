@@ -3,7 +3,7 @@ const { test } = require('@playwright/test');
 const ToolsqaMainPage = require('../pages/toolsqa_main_page.js');
 const ToolsqaArticlesPage = require('../pages/toolsqa_articles_page.js');
 
-test('Example Test', async ({ page } ) => {
+test('Toolsqa Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const toolsqaMainPage = new ToolsqaMainPage(page);

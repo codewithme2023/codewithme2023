@@ -4,7 +4,7 @@ const YoutubeMainPage = require('../pages/youtube_main_page.js');
 const YoutubeVideoPage = require('../pages/youtube_video_page.js');
 const YoutubeSearchPage = require('../pages/youtube_search_page.js');
 
-test('Example Test', async ({ page }) => {
+test('Youtube Test', async ({ page }) => {
   test.setTimeout(120000);
   const youtubeMainPage = new YoutubeMainPage(page);
   const youtubeVideoPage = new YoutubeVideoPage(page);

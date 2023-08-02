@@ -5,7 +5,7 @@ const W3schoolsJavascriptPage = require('../pages/w3schools_javascript_page.js')
 const W3schoolsPythonPage = require('../pages/w3schools_python_page.js')
 const W3schoolsHowtoPage = require('../pages/w3schools_howto_page.js')
 
-test('Example Test', async ({ page } ) => {
+test('W3schools Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const w3schoolsMainPage = new W3schoolsMainPage(page);

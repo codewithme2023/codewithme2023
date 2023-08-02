@@ -3,7 +3,7 @@ const { test } = require('@playwright/test');
 const DemoqaMainPage = require('../pages/demoqa_main_page.js');
 const DemoqaElementsPage = require('../pages/demoqa_elements_page.js');
 
-test('Example Test', async ({ page } ) => {
+test('Demoqa Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const demoqaMainPage = new DemoqaMainPage(page);

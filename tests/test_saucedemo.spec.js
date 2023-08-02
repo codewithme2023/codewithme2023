@@ -3,7 +3,7 @@ const { test } = require('@playwright/test');
 const SaucedemoMainPage = require('../pages/saucedemo_main_page.js');
 const SaucedemoLoginPage = require('../pages/saucedemo_login_page.js')
 
-test('Example Test', async ({ page } ) => {
+test('Saucedemo Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const saucedemoMainPage = new SaucedemoMainPage(page);

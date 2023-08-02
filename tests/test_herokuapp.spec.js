@@ -6,7 +6,7 @@ const HerokuappInputsPage = require('../pages/herokuapp_inputs_page.js')
 const HerokuappAddRemovePage = require('../pages/herokuapp_add_remove_page.js')
 const HerokuappLoginPage = require('../pages/herokuapp_login_page.js')
 
-test('Example Test', async ({ page } ) => {
+test('Herokuapp Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const herokuappMainPage = new HerokuappMainPage(page);

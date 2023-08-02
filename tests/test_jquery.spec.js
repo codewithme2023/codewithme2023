@@ -3,7 +3,7 @@ const { test } = require('@playwright/test');
 const JqueryMainPage = require('../pages/jquery_main_page.js')
 const JqueryDownloadPage = require('../pages/jquery_download_page.js');
 
-test('Example Test', async ({ page } ) => {
+test('Jquery Test', async ({ page } ) => {
   test.setTimeout(120000);
 
   const jqueryMainPage = new JqueryMainPage(page);
