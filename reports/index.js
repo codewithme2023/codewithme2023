@@ -2,12 +2,13 @@ const TestResultAnalyzer = require('./TestResultAnalyzer');
 const { Chart, LinearScale, BarController, CategoryScale, BarElement } = require('chart.js');
 const { createCanvas } = require('canvas');
 const fs = require('fs');
+const path = require('path');
 
 // Register the required scales, controllers, and elements before using them
 Chart.register(LinearScale, BarController, CategoryScale, BarElement);
 
 (async () => {
-  const reportFilePath = '../playwright-report/index.html'; // Update with the correct path
+  const reportFilePath = 'index.html'; // Update with the correct path
   const analyzer = new TestResultAnalyzer(reportFilePath);
   const testResults = await analyzer.getTestResults();
 
@@ -46,8 +47,11 @@ Chart.register(LinearScale, BarController, CategoryScale, BarElement);
   // Convert the chart configuration to a JSON string
   const chartData = JSON.stringify(chartConfig);
 
-  // Read the existing index.html content
-  const existingIndexHtml = fs.readFileSync('playwright-report/index.html', 'utf8');
+  const reportDirPath = path.resolve(__dirname, '../playwright-report');
+
+  // Combine the directory path with the file name to get the absolute path to index.html
+  const indexPath = path.join(reportDirPath, "index.html");
+  const existingIndexHtml = fs.readFileSync(indexPath, 'utf8');
 
   // Find the position to insert the chart data
   const insertPosition = existingIndexHtml.indexOf('<div id=\'root\'>');
