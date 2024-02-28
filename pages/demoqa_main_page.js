@@ -12,6 +12,15 @@ class DemoqaMainPage {
     async getPageTitle() {
       return await this.page.title();
     }
+
+    async consent() {
+      const labelSelector = `//p[text()='Consent']`;
+
+      await this.page.waitForSelector(`xpath=${labelSelector}`);
+      const labelElementHandle = await this.page.$(`xpath=${labelSelector}`);
+
+      await labelElementHandle.click();
+    }
   
     async checkTitle(title, value) {
       const titleContainsValue = title.includes(value);

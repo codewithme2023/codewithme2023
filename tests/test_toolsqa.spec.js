@@ -27,6 +27,9 @@ test('Toolsqa Test', async ({ page } ) => {
 
   await toolsqaMainPage.clickLatestArticlesLink();
   await toolsqaArticlesPage.testArticleTitles([
+    'Top Cross Browser Testing Tools For 2024',
+    'Introduction to the Playwright Framework',
+    'AI in software testing',
     'Enhancing Test Automation with testRigor Integrations',
     'How to test file upload functionality using testRigor?',
     'testRigor Tutorial',
@@ -36,12 +39,12 @@ test('Toolsqa Test', async ({ page } ) => {
     'Test Case Recorder in testRigor using Chrome Extension',
     'Global Variables & Data Sets',
     'Fix A Failed Test Case',
-    'Introduction to TestSigma',
-    'Stale Element Reference Exception',
-    'State Transition Testing',
   ]);
   await toolsqaArticlesPage.clickPagination(3);
   await toolsqaArticlesPage.testArticleTitles([
+    "What is Rest Api?",
+    "Rest Assured Examples",
+    "Complete Guide for Test Automation Frameworks",
     "What is Fault Tolerance in Test Automation?",
     "Getting started with Rest Assured",
     "What is REST?",
@@ -51,12 +54,12 @@ test('Toolsqa Test', async ({ page } ) => {
     "",
     "",
     "What is Usability Testing?",
-    "Dynamic Testing",
-    "Software Development Life Cycle",
-    "Integration Testing in Software Testing",
   ]);
   await toolsqaArticlesPage.clickPagination('First');
   await toolsqaArticlesPage.testArticleTitles([
+    'Top Cross Browser Testing Tools For 2024',
+    'Introduction to the Playwright Framework',
+    'AI in software testing',
     'Enhancing Test Automation with testRigor Integrations',
     'How to test file upload functionality using testRigor?',
     'testRigor Tutorial',
@@ -66,21 +69,9 @@ test('Toolsqa Test', async ({ page } ) => {
     'Test Case Recorder in testRigor using Chrome Extension',
     'Global Variables & Data Sets',
     'Fix A Failed Test Case',
-    'Introduction to TestSigma',
-    'Stale Element Reference Exception',
-    'State Transition Testing',
   ]);
   await toolsqaArticlesPage.clickPagination('Last');
   await toolsqaArticlesPage.testArticleTitles([
-    "What is TestNG?",
-    "Install TestNG In Eclipse & IntelliJ",
-    "TestNG Test Suite",
-    "TestNG Annotations - Benefits, Hierarchy & TestNG Case Priorities",
-    "TestNG - Dependent Tests",
-    "TestNG Reports",
-    "TestNG Parameters",
-    "TestNG DataProviders",
-    "TestNG Test Case Priority And Sequence",
     "TestNG Groups"
   ]);
 

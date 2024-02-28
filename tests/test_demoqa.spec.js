@@ -10,6 +10,7 @@ test('Demoqa Test', async ({ page } ) => {
   const demoqaElementsPage = new DemoqaElementsPage(page);
 
   await demoqaMainPage.navigate();
+  await demoqaMainPage.consent();
 
   await demoqaMainPage.testH5Elements([
     "Elements",

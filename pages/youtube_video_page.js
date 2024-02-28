@@ -39,7 +39,7 @@ class YoutubeVideoPage{
     }
 
     async clickLike(){
-        const sortButtonXpath = '(//*[@id="segmented-like-button"]/ytd-toggle-button-renderer/yt-button-shape/button/yt-touch-feedback-shape/div)[1]'; 
+        const sortButtonXpath = '(//like-button-view-model[@class="YtLikeButtonViewModelHost"])[1]'; 
         const sortButton = await this.page.waitForSelector(`xpath=${sortButtonXpath}`);
         await sortButton.click();
     }

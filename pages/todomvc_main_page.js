@@ -6,7 +6,7 @@ class TodomvcMainPage {
     }
   
     async navigate() {
-      await this.page.goto('https://todomvc.com/examples/vanillajs/');
+      await this.page.goto('https://todomvc.com/examples/javascript-es5/dist/');
     }
   
     async getPageTitle() {

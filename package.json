@@ -5,10 +5,8 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf allure-report/ allure-results/ test-results/",
-    "test": "npm run clean && npx playwright test",
-    "posttest": "node reports/index.js",
-    "test:reporter": "npm run clean && npx playwright test && npm run allure-report || :",
-    "allure-report": "npx allure generate ./allure-results && allure open"
+    "test": "playwright test",
+    "report": "allure generate allure-results --clean"
   },
   "repository": {
     "type": "git",
@@ -23,11 +21,12 @@
   "homepage": "https://github.com/codewithme2023/codewithme2023#readme",
   "devDependencies": {
     "@playwright/test": "^1.36.2",
+    "allure-commandline": "^2.27.0",
     "allure-playwright": "^2.5.0",
     "cross-env": "^7.0.3",
+    "http-server": "^14.1.1",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^5.0.1",
-    "allure-commandline": "^2.27.0"
+    "rimraf": "^5.0.1"
   },
   "dependencies": {
     "@wdio/allure-reporter": "^8.12.3",
