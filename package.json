@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf allure-report/ allure-results/ test-results/",
-    "test": "playwright test",
-    "report": "allure generate allure-results --clean"
+    "test": "npm run clean && npx playwright test",
+    "posttest": "node reports/index.js",
+    "test:reporter": "npm run clean && npx playwright test && npm run allure-report || :",
+    "allure-report": "npx allure generate ./allure-results && allure open"
   },
   "repository": {
     "type": "git",
