@@ -53,6 +53,28 @@ Um die Tests auszuführen, können verschiedene Befehle genutzt werden:
 1. Öffne deinen Webbrowser.
 2. Gehe zur folgenden Adresse: `http://localhost:8080`
 
+## Jenkins Plugins installieren
+
+Um die erforderlichen Funktionen für die Anzeige von Allure-Testberichten und das Arbeiten mit Git-Repositories in Jenkins zu ermöglichen, müssen die folgenden Plugins installiert werden:
+
+### 1. Allure HTML Publisher Plugin
+
+Das Allure HTML Publisher Plugin ermöglicht die Anzeige von Allure-Testberichten direkt in Jenkins.
+
+1. Gehe zu "Verwalten Jenkins" > "Plugin verwalten" > "Verfügbar".
+2. Suche nach "Allure" und aktiviere das "Allure HTML Publisher" Plugin.
+3. Klicke auf "Installieren ohne Neustart".
+
+### 2. Git Plugin
+
+Das Git Plugin ermöglicht das Einbinden von Git-Repositories in Jenkins-Jobs.
+
+1. Gehe zu "Verwalten Jenkins" > "Plugin verwalten" > "Verfügbar".
+2. Suche nach "Git" und aktiviere das "Git Plugin".
+3. Klicke auf "Installieren ohne Neustart".
+
+Nach der Installation dieser Plugins können sie in Jenkins verwendet werden, um Allure-Testberichte zu veröffentlichen und mit Git-Repositories zu arbeiten.
+
 ## Einrichtung eines Jenkins-Jobs aus einem Git-Repository
 
 Um einen Jenkins-Job aus einem Git-Repository zu erstellen, folgen Sie diesen Schritten:
@@ -146,28 +168,6 @@ pipeline {
 ```
 
 3. Speichere die Änderungen und starte den Jenkins-Dienst neu.
-
-## Jenkins Plugins installieren
-
-Um die erforderlichen Funktionen für die Anzeige von Allure-Testberichten und das Arbeiten mit Git-Repositories in Jenkins zu ermöglichen, müssen die folgenden Plugins installiert werden:
-
-### 1. Allure HTML Publisher Plugin
-
-Das Allure HTML Publisher Plugin ermöglicht die Anzeige von Allure-Testberichten direkt in Jenkins.
-
-1. Gehe zu "Verwalten Jenkins" > "Plugin verwalten" > "Verfügbar".
-2. Suche nach "Allure" und aktiviere das "Allure HTML Publisher" Plugin.
-3. Klicke auf "Installieren ohne Neustart".
-
-### 2. Git Plugin
-
-Das Git Plugin ermöglicht das Einbinden von Git-Repositories in Jenkins-Jobs.
-
-1. Gehe zu "Verwalten Jenkins" > "Plugin verwalten" > "Verfügbar".
-2. Suche nach "Git" und aktiviere das "Git Plugin".
-3. Klicke auf "Installieren ohne Neustart".
-
-Nach der Installation dieser Plugins können sie in Jenkins verwendet werden, um Allure-Testberichte zu veröffentlichen und mit Git-Repositories zu arbeiten.
 
 ## Ausführen der Tests
 
