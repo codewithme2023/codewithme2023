@@ -1,7 +1,8 @@
 # Playwright Repository Dokumentation
 
 ## Einleitung
-Dies ist eine Dokumentation für das Playwright-Repository, das Funktionen zur Automatisierung von Browserinteraktionen bereitstellt.
+Diese Dokumentation beschreibt die notwendigen Schritte um das von Damodar und Timo erstelltem Playwright Testumgebungs Kit direkt benutzen zu können.
+Nach ungefähr 10 min Setup und demFestlegen einer URL in der Navigation Funktion ist es bereits möglich tests mit Report in Jenkins auszuführen(Leider nur lokal).
 
 ## Installation
 
@@ -54,15 +55,14 @@ Um die Tests auszuführen, können verschiedene Befehle genutzt werden:
 
 ## Einrichtung eines Jenkins-Jobs aus einem Git-Repository
 
-1. Klicke auf "Neues Element erstellen" auf der Jenkins-Startseite.
-2. Wähle "Pipeline" und gib einen Namen für deinen Job ein.
-3. Klicke auf "OK".
+Um einen Jenkins-Job aus einem Git-Repository zu erstellen, folgen Sie diesen Schritten:
 
-## Konfiguration des Jenkins-Jobs
-
-1. Im Abschnitt "Pipeline" wähle "Pipeline Script from SCM".
-2. Wähle Git als SCM aus und gib die Repository-URL ein: `https://github.com/codewithme2023/codewithme2023.git`
-3. Füge den folgenden Pipeline-Code in das Textfeld ein:
+1. Wählen Sie "Neues Element erstellen" auf der Jenkins-Startseite.
+2. Geben Sie einen Namen für Ihren Job ein und wählen Sie "Pipeline".
+3. Konfigurieren Sie die Pipeline-Quelle mit "Pipeline-Skript aus SCM".
+4. Wählen Sie als SCM "Git" und fügen Sie die Repository-URL `https://github.com/codewithme2023/codewithme2023.git` ein.
+5. Fügen Sie erforderliche Zugangsdaten hinzu oder wählen Sie vorhandene aus.
+6. Füge den folgenden Pipeline-Code in das Textfeld ein:
 
 ```groovy
 pipeline {
@@ -134,7 +134,7 @@ pipeline {
 }
 ```
 
-4. Klicke auf "Speichern" um die Konfiguration zu übernehmen.
+7. Klicke auf "Speichern" um die Konfiguration zu übernehmen.
 
 ## Konfiguration der Jenkins-Startparameter
 
